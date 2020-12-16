@@ -10,7 +10,7 @@ export const BtonLg = () => (
   <Button
     value={"Button Large"}
     className={"cls"}
-    style={{ width: "350px", background: "blue" }}
+    style={{ width: "50px", background: "blue" }}
     onClick={() => alert("CLick")}
   />
 );

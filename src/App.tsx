@@ -1,8 +1,10 @@
 import React from "react";
-import "./App.css";
+// import "./App.css";
 
 function App() {
-  return <div className="App">story book</div>;
+  return <div>story book</div>;
 }
 
 export default App;
+
+// className="App"
