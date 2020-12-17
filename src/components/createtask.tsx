@@ -1,12 +1,12 @@
 import React from "react";
 
 function CreateTask({ addTask }: any) {
-  const [value, setValue] = React.useState<any>("");
+  console.log(addTask, "FIOF");
+  const [value, setValue] = React.useState<string>("");
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!value) return;
-
     addTask(value);
     setValue("");
   };
