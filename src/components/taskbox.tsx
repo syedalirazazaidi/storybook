@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { useState } from "react";
 import "./taskBox.css";
 
 import { IPropTask } from "../Types/types";
@@ -9,14 +9,18 @@ interface propTodo {
 interface Todotype {
   task: IPropTask;
   index?: number;
+  removeTask: any;
 }
-function Task({ task }: Todotype) {
+function Task({ task, removeTask, index }: Todotype) {
   return (
     <div
       className="task"
       style={{ textDecoration: task.completed ? "line-through" : "" }}
     >
       {task.title}
+      <button style={{ background: "red" }} onClick={() => removeTask(index)}>
+        x
+      </button>
     </div>
   );
 }
@@ -27,12 +31,17 @@ function Todo({ allvalue }: propTodo) {
     const newTasks = [...tasks, { title, completed: false }];
     setTasks(newTasks);
   };
+  const removeTask = (index: number) => {
+    const newTasks = [...tasks];
+    newTasks.splice(index, 1);
+    setTasks(newTasks);
+  };
   return (
     <div className="todo-container">
       <div className="header">ADD- TASK</div>
       <div className="tasks">
         {tasks.map((task: IPropTask, index: number) => (
-          <Task task={task} index={index} key={index} />
+          <Task task={task} index={index} key={index} removeTask={removeTask} />
         ))}
       </div>
       <div className="create-task">

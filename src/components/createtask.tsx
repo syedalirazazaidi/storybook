@@ -1,7 +1,8 @@
 import React from "react";
-
-function CreateTask({ addTask }: any) {
-  console.log(addTask, "FIOF");
+interface addProps {
+  addTask: (title: string) => void;
+}
+function CreateTask({ addTask }: addProps) {
   const [value, setValue] = React.useState<string>("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
