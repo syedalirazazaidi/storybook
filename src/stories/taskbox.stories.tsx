@@ -21,3 +21,19 @@ export default {
 };
 
 export const TodoTask = () => <Todo allvalue={alltask} />;
+
+
+// import React, { useState } from "react";
+// import CreateTask from "../components/createtask";
+
+// export default {
+//   title: "Create Task",
+//   component: CreateTask,
+// };
+
+// export const TodoCreateTask = () => (
+//   <CreateTask type="text" className="input" />
+// );
+
+
+// createtask.stories.tsx
